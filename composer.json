@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/lumen-framework": "5.3.*",
-        "vlucas/phpdotenv": "~2.2"
+        "vlucas/phpdotenv": "~2.2",
+        "vluzrmos/slack-api": "^0.4.8"
     },
     "autoload": {
         "psr-4": {
