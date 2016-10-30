@@ -4,12 +4,14 @@ _An easy-to-install, Lumen based invitation tool for your Slack team._
 
 ## Install
 
-The keyword for this project is "easy". All you will need to do is to execute:
+The keyword for this little project is "easy". All you will need to do is to execute:
 
 `composer create-project francescomalatesta/slacky`
 
 and nothing more.
 
-## Configuration
+If you have already added a Slack access token to your `.env` file, there's nothing more to do. 
 
-To write.
+Otherwise, you will be asked for it.
+
+**Important:** if you don't know what an access token is, just generate it [on this page](https://api.slack.com/docs/oauth-test-tokens).
