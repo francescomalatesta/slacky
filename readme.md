@@ -17,3 +17,12 @@ If you have already added a Slack access token to your `.env` file, there's noth
 Otherwise, you will be asked for it.
 
 **Important:** if you don't know what an access token is, just generate it [on this page](https://api.slack.com/docs/oauth-test-tokens).
+
+## Localization
+
+The default locale is `en`. You can change it by specifing another value in `.env` file, for `APP_LOCALE`.
+
+**Currently supported:**
+
+* en
+* it
