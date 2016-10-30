@@ -6,7 +6,9 @@ _An easy-to-install, Lumen based invitation tool for your Slack team._
 
 The keyword for this little project is "easy". All you will need to do is to execute:
 
-`composer create-project francescomalatesta/slacky`
+    git clone https://github.com/francescomalatesta/slacky YourFolder
+    cd YourFolder
+    ./install
 
 and nothing more.
 
