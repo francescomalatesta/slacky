@@ -2,6 +2,8 @@
 
 _An easy-to-install, Lumen based invitation tool for your Slack team._
 
+![](slacky-screen.png)
+
 ## Install
 
 The keyword for this little project is "easy". All you will need to do is to execute:
