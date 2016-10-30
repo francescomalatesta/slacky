@@ -13,7 +13,12 @@ return [
     ],
 
     'success' => 'Done! Check your inbox, an invitation is arriving!',
-    'error' => 'Mmmh... something went wrong. Try again later!',
+
+    'errors' => [
+        'generic' => 'Mmmh... something went wrong. Try again later!',
+        'invalid_email' => 'Please insert valid email address!',
+        'already_invited' => 'It seems that an invitation for this email was already sent. Check your inbox!'
+    ],
 
     'credits' => 'Crafted with <a href="https://lumen.laravel.com/" target="_blank">Lumen</a>, in a boring afternoon, by <a href="https://github.com/francescomalatesta" target="_blank">Francesco Malatesta</a>.',
 

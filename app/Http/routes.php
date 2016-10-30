@@ -25,7 +25,10 @@ $app->get('/', function (SlackTeam $slackTeam, SlackChannel $slackChannel) use (
 $app->post('/invite', function(Request $request, SlackUserAdmin $slackUserAdmin) use ($app) {
     $invitation = $slackUserAdmin->invite($request->get('email'));
     if($invitation->ok === false) {
-        return view('error');
+        $code = 'lines.errors.' . $invitation->error;
+        $message = (trans($code) === $code) ? trans('lines.errors.generic') : trans($code);
+
+        return view('error', compact('message'));
     }
 
     return view('success');

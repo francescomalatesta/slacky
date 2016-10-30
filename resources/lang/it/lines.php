@@ -13,7 +13,12 @@ return [
     ],
 
     'success' => 'Fatto! A breve dovresti ricevere una mail con il tuo invito!',
-    'error' => 'Mmmh... sembra ci sia stato un problema. Riprova a breve!',
+
+    'errors' => [
+        'generic' => 'Mmmh... sembra ci sia stato un problema. Riprova a breve!',
+        'invalid_email' => 'Inserisci un indirizzo email valido!',
+        'already_invited' => 'Sembra sia stato già inviato un invito per questo indirizzo email!'
+    ],
 
     'credits' => 'Creato con <a href="https://lumen.laravel.com/" target="_blank">Lumen</a>, in un pomeriggio noioso, da <a href="https://github.com/francescomalatesta" target="_blank">Francesco Malatesta</a>.',
 
