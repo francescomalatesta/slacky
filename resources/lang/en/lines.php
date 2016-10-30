@@ -15,5 +15,7 @@ return [
     'success' => 'Done! Check your inbox, an invitation is arriving!',
     'error' => 'Mmmh... something went wrong. Try again later!',
 
-    'credits' => 'Crafted with <a href="https://lumen.laravel.com/" target="_blank">Lumen</a>, in a boring afternoon, by <a href="https://github.com/francescomalatesta" target="_blank">Francesco Malatesta</a>.'
+    'credits' => 'Crafted with <a href="https://lumen.laravel.com/" target="_blank">Lumen</a>, in a boring afternoon, by <a href="https://github.com/francescomalatesta" target="_blank">Francesco Malatesta</a>.',
+
+    'auth_error' => 'Hey, it seems that I can\'t get in touch with your Slack team! Please, verify the access token in the .env file!'
 ];

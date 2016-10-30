@@ -15,5 +15,7 @@ return [
     'success' => 'Fatto! A breve dovresti ricevere una mail con il tuo invito!',
     'error' => 'Mmmh... sembra ci sia stato un problema. Riprova a breve!',
 
-    'credits' => 'Creato con <a href="https://lumen.laravel.com/" target="_blank">Lumen</a>, in un pomeriggio noioso, da <a href="https://github.com/francescomalatesta" target="_blank">Francesco Malatesta</a>.'
+    'credits' => 'Creato con <a href="https://lumen.laravel.com/" target="_blank">Lumen</a>, in un pomeriggio noioso, da <a href="https://github.com/francescomalatesta" target="_blank">Francesco Malatesta</a>.',
+
+    'auth_error' => 'Errore in fase di connessione. Verifica di aver impostato il token correttamente!'
 ];

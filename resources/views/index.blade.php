@@ -58,7 +58,7 @@
                             $('#send_button').prop('disabled', false);
                             $('#send_button').text('{{ trans('lines.button.idle') }}');
 
-                            $('#feedback_container').html(data);
+                            $('#feedback').html(data);
                         });
 
                     event.preventDefault();
