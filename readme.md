@@ -18,11 +18,11 @@ Otherwise, you will be asked for it.
 
 **Important:** if you don't know what an access token is, just generate it [on this page](https://api.slack.com/docs/oauth-test-tokens).
 
-## Localization
-
-The default locale is `en`. You can change it by specifing another value in `.env` file, for `APP_LOCALE`.
+The setup script will also ask you for the tool locale.
 
 **Currently supported:**
 
 * en
 * it
+
+You can easily change the locale whenever you want by running the command again.

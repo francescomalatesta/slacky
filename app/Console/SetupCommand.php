@@ -4,20 +4,28 @@ namespace App\Console;
 
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class SetupCommand extends Command
 {
     protected $name = 'slacky-setup';
-    protected $description = "Sets the Slack access token.";
+    protected $description = "Slacky setup command.";
+
+    private $allowedLocales = ['en', 'it'];
 
     public function fire()
+    {
+        $this->output->writeln('Welcome to Slacky!');
+        $this->askForSlackAccessToken();
+        $this->askForLocale();
+    }
+
+    private function askForSlackAccessToken()
     {
         if(env('SLACK_TOKEN')) {
             $this->output->success('It seems that you have already specified a Slack access token. Well done!');
             return;
         }
-
-        $this->output->writeln('Welcome to Slacky!');
 
         $isTokenValid = false;
         $accessToken = '';
@@ -30,8 +38,26 @@ class SetupCommand extends Command
             }
         }
 
-        $this->updateEnvFile($accessToken);
+        $this->updateEnvFileItem('SLACK_TOKEN', $accessToken);
         $this->output->success('Token set successfully!');
+    }
+
+    private function askForLocale()
+    {
+        $isLocaleValid = false;
+        $chosenLocale = '';
+        while(!$isLocaleValid) {
+            $chosenLocale = $this->output->ask('Please specify a locale code ('.implode(', ', $this->allowedLocales).' are valid codes)', 'en');
+
+            if(in_array($chosenLocale, $this->allowedLocales)) {
+                $isLocaleValid = true;
+            } else {
+                $this->error('The specified locale was not found, try again!');
+            }
+        }
+
+        $this->updateEnvFileItem('APP_LOCALE', $chosenLocale);
+        $this->output->success('Locale set successfully!');
     }
 
     private function connectsSuccessfullyToSlackWith($accessToken)
@@ -44,12 +70,12 @@ class SetupCommand extends Command
         return $response->ok;
     }
 
-    private function updateEnvFile($accessToken)
+    private function updateEnvFileItem($name, $value)
     {
         $lines = file('.env');
-        $lines = array_map(function($item) use ($accessToken) {
-            if(trim($item) === 'SLACK_TOKEN=') {
-                return 'SLACK_TOKEN=' . $accessToken . "\n";
+        $lines = array_map(function($item) use ($name, $value) {
+            if(Str::startsWith(trim($item), $name . '=')) {
+                return $name . '=' . $value . "\n";
             }
             return $item;
         }, $lines);
