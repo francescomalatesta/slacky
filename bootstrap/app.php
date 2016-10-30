@@ -82,6 +82,8 @@ $app->singleton(
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
+$app->register(\Vluzrmos\SlackApi\SlackApiServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

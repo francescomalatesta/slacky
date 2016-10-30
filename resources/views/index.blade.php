@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ trans('lines.page_title', ['teamName' => 'Team Name']) }}</title>
+        <title>{{ trans('lines.page_title', ['teamName' => $teamName]) }}</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
@@ -26,7 +26,7 @@
                         <img src="{{ url('slack.png') }}" alt="Slack Logo" class="logo" />
                         <hr>
                         <h1>{{ trans('lines.claim') }}</h1>
-                        <p>{!!  trans('lines.message', ['usersCount' => 0, 'teamName' => 'Team Name']) !!}</p>
+                        <p>{!!  trans('lines.message', ['usersCount' => $usersCount, 'teamName' => $teamName]) !!}</p>
                         <hr>
                         <p><input type="text" class="form-control" id="email" placeholder="{{ trans('lines.email') }}" autofocus required /></p>
                         <hr>
