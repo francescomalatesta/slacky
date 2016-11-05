@@ -23,14 +23,6 @@
     "autoload-dev": {
         "classmap": []
     },
-    "scripts": {
-        "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "php artisan slacky-setup"
-        ]
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
