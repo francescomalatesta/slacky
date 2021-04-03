@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use Vluzrmos\SlackApi\Contracts\SlackTeam;
 use Vluzrmos\SlackApi\Contracts\SlackChannel;
 use Vluzrmos\SlackApi\Contracts\SlackUserAdmin;
+use Vluzrmos\SlackApi\SlackApi;
 
 class MainController extends Controller
 {
-    public function getIndex(SlackTeam $slackTeam, SlackChannel $slackChannel)
+    public function getIndex(SlackTeam $slackTeam, SlackApi $slackApi)
     {
         $result = $slackTeam->info();
         if($result->ok === false) {
@@ -18,11 +19,11 @@ class MainController extends Controller
 
         $teamName = $result->team->name;
 
-        $channels = $slackChannel->all(true)->channels;
+        $channels = $slackApi->get('conversations.list')->channels;
         $channels = array_filter($channels, function($channel){
             return ($channel->name === 'general') ? true : false;
         });
-        $usersCount = count(reset($channels)->members);
+        $usersCount = reset($channels)->num_members;
 
         return view('index', compact('teamName', 'usersCount'));
     }
